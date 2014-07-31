@@ -1,6 +1,19 @@
 module CarrierWave
   module Processing
     module RMagick
+
+      # Auto orients the image
+      #
+      #   process :auto_orient!
+      #
+      def auto_orient!
+        manipulate! do |img|
+          img.auto_orient!
+          img
+        end
+      end
+
+
       # Strips out all embedded information from the image
       #
       #   process :strip
